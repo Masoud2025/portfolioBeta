@@ -1,10 +1,5 @@
-import { ModeToggle } from "@/components/mode-toggle";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <div>
-      <h1>Hee</h1>
-      <ModeToggle></ModeToggle>
-    </div>
-  );
+export default function RootPage() {
+  redirect("/fa");
 }
