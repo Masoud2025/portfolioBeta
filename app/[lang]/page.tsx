@@ -1,8 +1,11 @@
 import { ModeToggle } from "@/components/mode-toggle";
 import { languages, translations, type Lang } from "@/lib/translations";
+import DeFlag from "@/public/DE.svg";
+import IRFlag from "@/public/IR.svg";
+import UsaFlag from "@/public/usa.svg";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
 export default async function Home({
   params,
 }: {
@@ -24,9 +27,15 @@ export default async function Home({
       <ModeToggle />
 
       <div className="flex gap-4">
-        <Link href="/fa">IR</Link>
-        <Link href="/en">EN</Link>
-        <Link href="/de">DE</Link>
+        <Link href="/fa">
+          <Image alt="" src={IRFlag} />
+        </Link>
+        <Link href="/en">
+          <Image alt="" src={UsaFlag} />
+        </Link>
+        <Link href="/de">
+          <Image alt="" src={DeFlag} />
+        </Link>
       </div>
     </div>
   );
