@@ -6,6 +6,8 @@ import UsaFlag from "@/public/usa.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Hero from "../../components/layout/Hero";
+import AlertWelcome from "@/components/AlertWelcome";
 export default async function Home({
   params,
 }: {
@@ -22,10 +24,11 @@ export default async function Home({
 
   return (
     <div className="p-10 space-y-6">
-      <h1 className="text-3xl font-bold">{t.title}</h1>
+      <h1 className="text-4xl font-bold">{t.title}</h1>
 
       <ModeToggle />
-
+            <Hero lang={lang} />
+      <AlertWelcome/>
       <div className="flex gap-4">
         <Link href="/fa">
           <Image alt="" src={IRFlag} />
