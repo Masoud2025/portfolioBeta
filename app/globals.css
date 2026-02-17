@@ -1,4 +1,5 @@
 @import "tailwindcss";
+/* @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&display=swap"); */
 
 /* کروم با این فلش میزنه اگه نباشه */
 @media (prefers-reduced-motion: no-preference) {
@@ -14,5 +15,67 @@
 
   ::view-transition-new(root) {
     z-index: 9999;
+  }
+}
+
+/* *-*-*-*- */
+/* File: CodeOrbitFixed.css */
+
+.orbit-wrapper {
+  width: 90%;
+  max-width: 600px;
+  height: 300px;
+  margin: 50px auto;
+  perspective: 800px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orbit-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: "Fira Code", monospace;
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 700;
+  margin: 0;
+  padding: 0 6px;
+  white-space: pre;
+  background: transparent;
+  transform-style: preserve-3d;
+  animation: rotateSingle 12s linear infinite;
+}
+
+/* رنگ و زاویه شروع هر قطعه */
+.orbit-item.item-1 {
+  color: #ff6b6b;
+  --start-angle: 0deg;
+}
+.orbit-item.item-2 {
+  color: #feca57;
+  --start-angle: 72deg;
+}
+.orbit-item.item-3 {
+  color: #48dbfb;
+  --start-angle: 144deg;
+}
+.orbit-item.item-4 {
+  color: #1dd1a1;
+  --start-angle: 216deg;
+}
+.orbit-item.item-5 {
+  color: #5f27cd;
+  --start-angle: 288deg;
+}
+
+/* انیمیشن هر قطعه روی مسیر دایره‌ای */
+@keyframes rotateSingle {
+  0% {
+    transform: rotateY(var(--start-angle)) translateZ(150px);
+  }
+  100% {
+    transform: rotateY(calc(var(--start-angle) + 360deg)) translateZ(150px);
   }
 }

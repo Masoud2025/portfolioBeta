@@ -1,8 +1,9 @@
 // components/layout/Hero.tsx
 import { languages, translations, type Lang } from "@/lib/translations";
 import { notFound } from "next/navigation";
-import devgif from "@/public/godhands.gif";
+import devgif from "@/public/ITGUY-removebg-preview (1).webp";
 import Image from "next/image";
+import CodeSphere from "@/components/CodeOrbit"
 type HeroProps = {
   lang: string;
 };
@@ -41,6 +42,7 @@ export default function Hero({ lang }: HeroProps) {
       <h4>Open to Frontend / Full-Stack Roles</h4>
       <h1 className="text-4xl font-bold">{t.Value_Proposition}</h1>
       {/* Hero image  */}
+      <CodeSphere/>
       <Image alt="" src={devgif}/>
     </div>
   );

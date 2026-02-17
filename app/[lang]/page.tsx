@@ -1,3 +1,4 @@
+import AlertWelcome from "@/components/AlertWelcome";
 import { ModeToggle } from "@/components/mode-toggle";
 import { languages, translations, type Lang } from "@/lib/translations";
 import DeFlag from "@/public/DE.svg";
@@ -7,7 +8,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Hero from "../../components/layout/Hero";
-import AlertWelcome from "@/components/AlertWelcome";
 export default async function Home({
   params,
 }: {
@@ -27,8 +27,8 @@ export default async function Home({
       <h1 className="text-4xl font-bold">{t.title}</h1>
 
       <ModeToggle />
-            <Hero lang={lang} />
-      <AlertWelcome/>
+      <Hero lang={lang} />
+      <AlertWelcome />
       <div className="flex gap-4">
         <Link href="/fa">
           <Image alt="" src={IRFlag} />
